@@ -3,7 +3,7 @@ def send_simple_message():
     return requests.post(
     "https://api.mailgun.net/v3/sandboxf1b7a46a2d934c1097903b166b690197.mailgun.org/messages",
         auth=("api", "6e1de8eb5242fab6b6721631d3fd81a7-7caa9475-44e4fc0c"),
-        data={"from": "Excited User <mailgun@sandboxf1b7a46a2d934c1097903b166b690197.mailgun.org>",
+        data={"from": "Recipe Room <mailgun@sandboxf1b7a46a2d934c1097903b166b690197.mailgun.org>",
             "to": ["rorleanslindsay@gmail.com"],
             "subject": "Welcome!!",
             "text": "Welcome to Recipe Room! Get ready to create some awesome, healthy recipes"})

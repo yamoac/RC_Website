@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Room - Detox</title>
+  <link href='css/bootstrap.css' rel='stylesheet'>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href='css/styles.css'>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+  * {
+      box-sizing: border-box;
+  }
+
+  .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+  }
+
+  /* Clearfix (clear floats) */
+  .row::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+  .homepage-caption {
+      color: #000;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-align: center;
+      padding-bottom: 10px;
+  }
+  .homepage-bar {
+      color: #000;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-align: center;
+      padding-bottom: 10px;
+  }
+
+  .a1 {
+    color: #2E8B57;
+}
+
+.a2 {
+  color: #000;
+}
+
+  .read-more {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    border-bottom: 2px solid #2E8B57;
+    display: inline-block;
+    padding: 0 5px;
+}
+.tag-line{
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    font-size: 28px;
+    margin: 20px 40px 0;
+    letter-spacing: -0.05em;
+}
+
+h1 {
+  background-color: #FFF;
+  font-family: tahoma;
+  color: #2E8B57;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+h2 {
+text-transform: uppercase;
+font-family: sans-serif;
+color: orange;
+letter-spacing: 0.3em;
+text-decoration: underline;
+text-align: center;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-align: center;
+  font-family: sans-serif;
+  color: pink;
+ }
+
+ol {
+    background-color: #FFF;
+    font-family: sans-serif;
+    color: green;
+    text-align: center;
+}
+
+p {
+    border-style: double;
+    border-width: 5px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+ul {
+display: flex;
+position: absolute;
+top: 5.4%;
+right: 75%;
+transform: translate(-50%,-50%);
+}
+ul li {
+list-style: none;
+}
+ul li a {
+width: 45px;
+height: 45px;
+background: #fff;
+text-align: center;
+line-height: 45px;
+font-size: 20px;
+margin: 0 10px;
+display: block;
+border-radius: 50%;
+position: relative;
+overflow: hidden;
+border: 3px solid #fff;
+z-index: 1;
+}
+ul li a .fa {
+position: relative;
+color: #262626;
+transition: .5s;
+z-index: 3;
+}
+ul li a:hover .fa {
+color: #fff;
+transform: rotateY(360deg);
+}
+ul li a:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000CD;
+  transition: .5s;
+  z-index: 2;
+}
+ul li a:hover:before {
+  top: 0;
+}
+ul li:nth-child(1) a:before {
+  background: #3b5999;
+}
+ul li:nth-child(2) a:before {
+  background: #55acee;
+}
+ul li:nth-child(3) a:before {
+  background: #e4405f;
+}
+
+.search-bar {
+display: flex;
+position: absolute;
+top: 5.4%;
+left: 90%;
+transform: translate(-50%,-50%);
+background: none;
+border: 0;
+border-bottom: 1px solid #000;
+height: 18px;
+width: 180px;
+color: #000;
+text-transform: uppercase;
+letter-spacing: 1px;
+outline: none !important;
+font-size: 11px;
+font-weight: 700;
+-webkit-appearance: none;
+position: absolute;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+
+form.search-icon button {
+  float: right;
+  width: 2.5%;
+  margin-top: -3.8%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+
+<body>
+ <nav>
+	<div>
+  <center class="homepage-bar">
+    <hr>
+  <a href="#" class="a1">ABOUT</a> | <a href="recipe.html" class="a1">RECIPES</a>  | <a href="detox.html" class="a1">DETOX</a>  | <a href="gallery.html" class="a1">GALLERY</a>  | <a href="Form.html" class="a1">CONTACT US</a>
+    <hr>
+    <ul>
+    <li><a href="http://www.facebook.com"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+    <li><a href="http://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+    <form class="search-icon">
+    <input class="search-bar" type="text" placeholder="Search...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </center>
+ </nav>
+ <div>
+     <div class="row">
+    <div class="logo2">
+   <a href="index.html">  <img class='img-responsive' src='images/logo1.PNG'></a>
+   </div>
+ </div>
+   </div>
+
+   <h1>Blueberry-Coconut Baked Oatmeal</h1>
+   <img class="center" class="center" src="https://lifemadesweeter.com/wp-content/uploads/Blueberry-Lemon-Coconut-Baked-Oatmeal-makes-the-perfect-make-ahead-breakfast-2.jpg">
+   <br>
+   <h2>Ingredients</h2>
+   <h3>Oatmeal</h3>
+   <ol>1 1/2 cups (260 grams) steel cut Irish oats</ol>
+   <ol>1/2 teaspoon ground ginger</ol>
+   <ol>1/2 teaspoon fine sea salt</ol>
+   <ol>1 teaspoon baking powder</ol>
+   <ol>4 cups (950 ml, 32 ounces) unsweetened vanilla almond milk</ol>
+   <ol>2 cups (480 ml, 16 ounces) light unsweetened coconut milk</ol>
+   <ol>1/2 (240 grams) cups fresh blueberries (frozen OK too, do not thaw first)</ol>
+   <ol>1/4 cup (47 grams) unsweetened dried blueberries</ol>
+   <ol>1/4 cup (22 grams) unsweetened coconut flake</ol>
+   <ol>Pure maple syrup, honey or your favorite natural sweetener to taste</ol>
+
+   <h3>Blueberry Sauce</h3>
+   <ol>2 cups (360 grams) fresh or frozen blueberries</ol>
+
+   <h3>Optional Toppings</h3>
+   <ol>Toasted nuts</ol>
+   <ol>Coconut Flake</ol>
+   <ol>Whipped Cream</ol>
+   <ol>Extra Dried and Fresh Blueberries</ol>
+
+   <h2>Method</h2>
+   <ol>1. Pre heat oven to 350 degrees F with the rack in the center.</ol>
+   <ol>2. Lightly coat a 13X9X2″ inch baking dish with cooking spray.</ol>
+   <ol>3. Combine all ingredients in a large bowl adding blueberries and coconut last.</ol>
+   <ol>4. Sweeten to taste.</ol>
+   <ol>5. Bake for about one hour.</ol>
+   <ol>6. Remove from the oven and let it cool to room temperature.</ol>
+   <ol>7. Place in refrigerator overnight for best results. It will thicken nicely as it cools.</ol>
+   <ol>8. Heat the blueberries with a splash of water over medium high heat.</ol>
+   <ol>9. When you hear them sizzle reduce heat to medium and cook for about 5 minutes until saucy.</ol>
+   <ol>10.Mash the blueberries against the side of the pan with a spatula.</ol>
+   <ol>11. Serve Oatmeal with some almond or coconut milk and blueberry sauce</ol><p></p>
+   <br>
+   <h1>Grilled Avocados Stuffed with Vegetables</h1>
+
+   <br>
+   <img class="center" class="center" src="https://cdn.cliqueinc.com/posts/217110/4-delectable-stuffed-avocado-recipes-that-will-have-you-going-back-for-seconds-2151351.640x0c.jpg">
+   <h2>Ingredients</h2>
+   <ol>2 tablespoons coconut milk</ol>
+   <ol>Zest and juice of 1 lime, plus lime wedges for serving</ol>
+   <ol>¼ cup finely diced red onion</ol>
+   <ol>½ garlic clove, minced</ol>
+   <ol>1 can hearts of palm, drained, rinsed and diced</ol>
+   <ol>1 cup diced cherry tomatoes</ol>
+   <ol>⅓ cup diced cilantro</ol>
+   <ol>½ diced jalapeño or serrano, more if desired</ol>
+   <ol>Heaping ¼ teaspoon sea salt, more for sprinkling</ol>
+   <ol>Freshly ground black pepper</ol>
+   <ol>4 ripe yet firm avocados</ol>
+   <ol>Extra-virgin olive oil, for drizzling</ol>
+
+   <h2>Method</h2>
+   <ol>1. Combine the coconut milk, lime zest and juice, red onion, and garlic.</ol>
+   <ol>2. Stir, then add the hearts of palm, tomatoes, cilantro, jalapeño, salt, and pepper.</ol>
+   <ol>3. Heat a grill to medium-high heat.</ol>
+   <ol>4. Slice the avocados in half, remove the pits, and drizzle each half with olive oil and lime juice.</ol>
+   <ol>5. Grill the avocado halves cut side down for 3 to 4 minutes or until char marks form.</ol>
+   <ol>6. Remove from the grill, place on a platter and fill each avocado half with the filling.</ol>
+   <ol>7. Serve with a pinch of salt, if desired, and lime wedges.</ol></p>
+
+   <br>
+   <h1>Mediterranean Breakfast Tostados</h1>
+   <img class="center" src= "https://i.pinimg.com/736x/ba/0a/8b/ba0a8b365b0a99915eb5afd779653533--mediterranean-breakfast-mediterranean-diet-recipes.jpg">
+
+   <br>
+   <h2>Ingredients</h2>
+   <ol>4 Tostados (lightly toasted)</ol>
+   <ol>Half cup of roasted red peper hummus</ol>
+   <ol>Half a cup of diced red pepper</ol>
+   <ol>Half a cup of chopped green onions</ol>
+   <ol>8 eggs beaten</ol>
+   <ol>Half a cup of skimmed milk</ol>
+   <ol>Half a tsp. garlic powder</ol>
+   <ol>Half a tsp. or oregano</ol>
+   <ol>Half a cup of cucumber, seeded and chopped</ol>
+   <ol>Half a cup of diced tomatoes</ol>
+   <ol>Quarter cup of feta crumbled</ol>
+
+   <h2>Method</h2>
+   <ol>1. In a large non-stick skillet over medium heat a</ol>
+   <ol>2. Add the red peppers and cook for 2-3 minutes until softened</ol>
+   <ol>3. Add the eggs, milk, garlic powder, oregano and green onions to the skillet</ol>
+   <ol>4. constantly stirring until egg whites are no longer translucent (about 2 minutes).</ol>
+   <ol>5. Top each tostada with hummus, eggs mixture, cucumber, tomates & feta.</ol></p>
+
+   <br>
+   <h1>Paleo and Gluten-free Blueberry Muffins</h1>
+   <img class="center" src= "https://www.paleorunningmomma.com/wp-content/uploads/2017/06/zucchini-blueberry-muffins-2.jpg">
+
+   </br>
+   <h2>Ingredients</h2>
+   <ol>200 grams of fine almond flour</ol>
+   <ol>Half a tsp of baking sode</ol>
+   <ol>Quarter tsp of fine sea salt</ol>
+   <ol>3 eggs beaten substantially</ol>
+   <ol>Quarter cup of honey</ol>
+   <ol>2 tbsp of coconut oil</ol>
+   <ol>One tbsp of lemon juice</ol>
+   <ol>One tbsp of organic vanilla extract</ol>
+   <ol>1 cup of fresh blueberries</ol>
+
+   <h2>Method</h2>
+   <ol>1. Preheat oven to 325 degrees and grease or line muffin tin.</ol>
+   <ol>2. Combine dry ingredients in large bowl.</ol>
+   <ol>3. Combine wet ingredients in medium bowl.</ol>
+   <ol>4. Stir wet ingredients into dry ingredients, then fold in blueberries.</ol>
+   <ol>5. Using a large scoop, fill muffin cups 3/4 full.</ol>
+   <ol>5. Bake for 20 - 25 minutes, until golden brown and toothpick inserted in center comes out clean.</ol></p>
+
+   <br>
+   <h1>Black Bean Lettuce Wraps with Grilled Corn Salsa</h1>
+   <img class="center" src= "https://ob8qxdtnu3-flywheel.netdna-ssl.com/wp-content/uploads/2015/04/Cinco-028.jpg">
+
+   <br>
+   <h2>Ingredients</h2>
+   <ol>¾ cup jasmine rice</ol>
+   <ol>1 cup water</ol>
+   <ol>1 can (15 ounces) black beans, rinsed and drained</ol>
+   <ol>3 tablespoons tomato salsa</ol>
+   <ol>Juice from ⅓ of a lime</ol>
+   <ol>½ cup fresh cilantro, chopped</ol>
+   <ol>Bibb lettuce leaves (or iceberg)</ol>
+   <ol>1 cup corn salsa</ol>
+   <ol>½ cup guacamole (or 1 Haas avocado)</ol>
+
+   <h2>Method</h2>
+   <ol>1. Prepare the jasmine rice according to package directions.</ol>
+   <ol>2. Open the can of black beans and pour into a colander - rinse and drain.</ol>
+   <ol>3. Add beans to a small pot over low heat for 8 minutes and add the tomato salsa.</ol>
+   <ol>4. Chop the fresh cilantro leaves. Add to the cooked rice with the lime juice.</ol>
+   <ol>5. Add a scoop of cilantro lime rice, followed by a scoop of black beans and corn salsa to the lettuce leaf.</ol>
+   <ol>6. Sprinkle with sliced avocado and fold into a taco-like shape.</ol></p>
+
+
+   <br>
+   <h1>Kale Salad with Kabocha Squash and Dressing</h1>
+   <img class="center" src= "https://joanne-eatswellwithothers.com/wp-content/uploads/2013/10/kale-salad-with-brie-croutons-roasted-butternut-squash-cumin-spiced-pecans-and-a-cranberry-vinaigrette.jpg">
+
+   <br>
+   <h2>Ingredients</h2>
+   <ol>1 small kabocha squash, cut into bite-sized pieces</ol>
+   <ol>2 tbsp olive oil, divided</ol>
+   <ol>1/2 tsp sea salt, divided</ol>
+   <ol>1/2 tsp ground black pepper, divided</ol>
+   <ol>Juice from 1/2 of a lemon</ol>
+   <ol>1 large bunch curly kale, ribs removed + chopped fine</ol>
+   <ol>1 tbsp dijon mustard</ol>
+   <ol>1 tbsp of unsweeted almond milk</ol>
+   <ol>1/2 tbsp of maple syrup</ol>
+   <ol>1/4 cup of pomegranate seeds</ol>
+   <ol>1/4 cup of pumpkin seeds</ol>
+
+   <h2>Method</h2>
+   <ol>1. Preheat the oven to 450 degrees and line a baking sheet with parchment paper.</ol>
+   <ol>2. Drizzle half the olive oil, and sprinkle half the salt and pepper onto the cut kobocha squash.</ol>
+   <ol>3. Toss to coat well and roast for 20 minutes or until golden brown, flipping half-way.</ol>
+   <ol>4. Rub the kale for a few minutes with the remaining olive oil, salt, pepper and lemon juice and set aside.</ol>
+   <ol>5. Whisk together the dijon mustard, almond milk and maple syrup, and set aside.</ol>
+   <ol>6. When the squash is done roasting toss it with the kale.</ol>
+   <ol>7. Plate it with the pomegranate and pumpkin seeds and drizzle the dressing on top</ol></p>
+
+   <br>
+   <h1>Chickpea Stuffed Aubergine with couscous</h1>
+   <img class="center" src= "http://dishingupthedirt.com/wp-content/uploads/2013/09/eggplant.jpg">
+
+   <br>
+   <h2>Ingredients</h2>
+   <ol>2 medium-sized Italian aubergines. sliced in half lengthwise</ol>
+   <ol>1 medium-sized yellow onion, diced</ol>
+   <ol>3 cloves of garlic, minced</ol>
+   <ol>1 cup couscous</ol>
+   <ol>1 cup cherry tomatoes, sliced in half</ol>
+   <ol>2 tbsp cooking oil (I used grapeseed oil) divided</ol>
+   <ol>1 small bunch of parsley, minced</ol>
+   <ol>1/4 cup organic tahini</ol>
+   <ol>2 tbsp fresh lemon juice</ol>
+   <ol>1 garlic clove, minced</ol>
+   <ol>1/4 cup water</ol>
+
+   <h2>Method</h2>
+   <ol>1. Preheat the oven to 375 degrees.</ol>
+   <ol>2. Once the aubergine is sliced in half, use a small spoon to scoop out the centre. Save the scooped out aubergine and dice it up.</ol>
+   <ol>3. Drizzle about 1 tbsp of the oil onto the aubergine and place cut side down on a prepared baking sheet.</ol>
+   <ol>4. Cook in the oven for about 15-25 minutes (or until eggplant is evenly cooked and slightly browned on the bottom.</ol>
+   <ol>5. Cook cous cous and heat the remaining oil in a large skillet.</ol>
+   <ol>6. Add the garlic and cook for about 2 more minutes. Add the tomatoes, diced aubergine and chickpeas.</ol>
+   <ol>7. Add cooked couscous to the pan and mix well to combine. Season everything with a little salt and pepper.</ol>
+   <ol>8. Scoop a healthy portion of the couscous mixture into each eggplant.</ol>
+   <ol>9. Drizzle with a little tahini sauce and garnish with a few tablespoons of minced parsley
+
+<div id="site-info" class="a1">
+<center>
+Recipe Room © 2018 | <a href="#" class="a1">ABOUT</a> | <a href="#" class="a1">PRIVACY POLICY</a> | <a href="#" class="a1">CONTACT</a> | <a href="#" class="a1">SUBCRIBE</a>
+</center>
+</div>
+
+</body>
+
+</html>

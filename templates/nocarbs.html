@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Room - No Carbs</title>
+  <link href='css/bootstrap.css' rel='stylesheet'>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+  * {
+      box-sizing: border-box;
+  }
+
+  .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+  }
+
+  /* Clearfix (clear floats) */
+  .row::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+  .homepage-caption {
+      color: #000;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-align: center;
+      padding-bottom: 10px;
+  }
+  .homepage-bar {
+      color: #000;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-align: center;
+      padding-bottom: 10px;
+  }
+
+  .a1 {
+    color: #2E8B57;
+}
+
+.header-style {
+  color: #FFF;
+  margin-top: 300px;
+  font-size: 50px;
+  font-style: bold;
+  margin-right: -90px;
+
+}
+
+
+.a2 {
+  color: #000;
+}
+
+  .read-more {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    border-bottom: 2px solid #2E8B57;
+    display: inline-block;
+    padding: 0 5px;
+}
+.tag-line{
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    font-size: 28px;
+    margin: 20px 40px 0;
+    letter-spacing: -0.05em;
+}
+ul {
+display: flex;
+position: absolute;
+top: 5.4%;
+right: 75%;
+transform: translate(-50%,-50%);
+}
+ul li {
+list-style: none;
+}
+ul li a {
+width: 45px;
+height: 45px;
+background: #fff;
+text-align: center;
+line-height: 45px;
+font-size: 20px;
+margin: 0 10px;
+display: block;
+border-radius: 50%;
+position: relative;
+overflow: hidden;
+border: 3px solid #fff;
+z-index: 1;
+}
+ul li a .fa {
+position: relative;
+color: #262626;
+transition: .5s;
+z-index: 3;
+}
+ul li a:hover .fa {
+color: #fff;
+transform: rotateY(360deg);
+}
+ul li a:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000CD;
+  transition: .5s;
+  z-index: 2;
+}
+ul li a:hover:before {
+  top: 0;
+}
+ul li:nth-child(1) a:before {
+  background: #3b5999;
+}
+ul li:nth-child(2) a:before {
+  background: #55acee;
+}
+ul li:nth-child(3) a:before {
+  background: #e4405f;
+}
+
+.search-bar {
+display: flex;
+position: absolute;
+top: 5.4%;
+left: 90%;
+transform: translate(-50%,-50%);
+background: none;
+border: 0;
+border-bottom: 1px solid #000;
+height: 18px;
+width: 180px;
+color: #000;
+text-transform: uppercase;
+letter-spacing: 1px;
+outline: none !important;
+font-size: 11px;
+font-weight: 700;
+-webkit-appearance: none;
+position: absolute;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+
+form.search-icon button {
+  float: right;
+  width: 2.5%;
+  margin-top: -3.8%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.bg {
+  background-image: url("images/nocarbs.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: relative;
+  height: 800px;
+  margin-top: -20px;
+}
+
+table, th, td {
+    border: 1px solid #2E8B57;
+    width: 400px;
+    text-align: center;
+}
+
+  </style>
+</head>
+
+<body>
+ <nav>
+	<div>
+  <center class="homepage-bar">
+    <hr>
+    <a href="#" class="a1">ABOUT</a> | <a href="recipe.html" class="a1">RECIPES</a>  | <a href="detox.html" class="a1">DETOX</a>  | <a href="gallery.html" class="a1">GALLERY</a>  | <a href="Form.html" class="a1">CONTACT US</a>
+    <hr>
+    <ul>
+    <li><a href="http://www.facebook.com"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+    <li><a href="http://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+    <form class="search-icon">
+    <input class="search-bar" type="text" placeholder="Search...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </center>
+ </nav>
+<div class="bg">
+<div class="container">
+  <center>
+  <h1 class="header-style">Thai Chicken Salad</h1>
+</center>
+</div>
+
+<div class="post-container">
+<center>
+  <p>
+  I’m a big fan of salads, but not your Bugs Bunny, plain lettuce type!
+  For me the best salads comprise of lots of different textures, are packed with flavour and cuddled in a delicious dressing.
+  This Thai Chicken Crunch Bowl Salad ticks all those boxes. It’s wonderfully nourishing whilst also being nice, light and healthy too!
+  </p>
+</center>
+</div>
+</div>
+<div class="ingredients-list">
+<div>
+  <center>
+  <h2 class="ingredients-style">Ingredients</h2>
+</center>
+</div>
+<div>
+  <br>
+</br>
+<div>
+  <h3 class="ingredients-style">Salad</h3>
+  <ol>
+    <li> Two chicken breasts (226 g/ 8 oz) </li>
+    <li> Half a cup shredded red cabbage (45 g/ 1.6 oz) </li>
+    <li> Half a cup shredded white cabbage (45 g/ 1.6 oz) </li>
+    <li> Half a cup grated carrot (45 g/ 1.6 oz) </li>
+    <li> One table spoon (tbsp) of chopped mint </li>
+    <li> Half a cup chopped coriander leaves (stalks removed) </li>
+    <li> One tbsp of chopped chives </li>
+    <li> Quarter cup of blanched almonds (36 g/ 1.3 oz) </li>
+  </ol>
+</div>
+<div>
+  <img class="img-circle2" class="img-responsive" src='images/rawchicken.jpg'>
+</div>
+</div>
+
+<div>
+<div class="move-up">
+  <h3 class="ingredients-style">Thai Marinade</h3>
+  <ol>
+    <li> One garlic clove, chopped </li>
+    <li> One tbsp ginger, grated </li>
+    <li> One small red chilli, finely chopped </li>
+    <li> Half a stalk lemongrass, finely chopped </li>
+    <li> Two tbsp fresh lime (30 ml) </li>
+    <li> Half a stalk lemongrass, finely chopped </li>
+    <li> One tbsp coconut aminos (15 ml) </li>
+  </ol>
+</div>
+<div>
+  <img class="img-circle3" class="img-responsive" src='images/rawchicken2.jpg'>
+</div>
+</div>
+
+<div class="move-up">
+  <h3 class="ingredients-style">Salad Dressing</h3>
+  <ol>
+    <li> Three tbsp of extra virgin olive oil (45 ml) </li>
+    <li> Salt and pepper, to taste </li>
+  </ol>
+</div>
+</div>
+
+<div class="ingredients-list2">
+<div>
+  <center>
+  <h2 class="ingredients-style">Instructions</h2>
+</center>
+</div>
+<div>
+  <br>
+</br>
+<div>
+  <center>
+  <p><b>
+    Prep Time: 25Mins
+  </b>
+  </p>
+</center>
+<center>
+  <table>
+    <tr>
+      <th>Nutritional values</th>
+      <th>Per Serving</th>
+    </tr>
+    <tr>
+      <td>Fiber</td>
+      <td>3 grams</td>
+    </tr>
+    <tr>
+      <td>Protein</td>
+      <td>20.7 grams</td>
+    </tr>
+    <tr>
+      <td>Fat</td>
+      <td>15 grams</td>
+    </tr>
+    <tr>
+      <td>Total Calories</td>
+      <td>312 kcal</td>
+    </tr>
+  </table>
+</center>
+<br>
+</br>
+  <ol>
+    <li> Preheat the oven to 180 °C/ 355 °F (fan assisted).
+        Prepare the marinade by putting all the ingredients in a pestle and mortar and combine until the flavours infuse together.
+    </li>
+    <li>
+    Place the chicken breasts between 2 sheets of cling film and bash with a rolling pin to flatten until even (1/2 inch/ 1 cm thick).
+  </li>
+  <li>
+  Place the chicken breasts in a bowl and coat with half of the marinade. Ideally leave to marinade for 2 hours or overnight in the fridge (or skip if you are short on time).
+  If you’re in a rush you can of course just use straight away but marinating allows the flavours to infuse.
+</li>
+<div>
+  <br>
+  </br>
+  <center>
+<img class="img-circle" class="img-responsive" src='images/chickenmarinade.jpg'>
+</center>
+<br>
+</br>
+<li>
+Finely slice or grate the cabbages and carrot and combine in a bowl along with the chopped herbs.
+</li>
+<li>
+Place the almonds on a baking tray and toast in the oven for 6 - 8 minutes until golden. Remove from the oven and allow to cool.
+</li>
+<li>
+Meanwhile, heat a griddle pan greased with a little olive oil to prevent sticking. Fry the chicken breasts for about 4 minutes per side until cooked through.
+</li>
+<br>
+</br>
+<center>
+<img class="img-circle" class="img-responsive" src='images/grillchicken.jpg'>
+<img class="img-circle" class="img-responsive" src='images/chickenbowl.jpg'>
+</center>
+<br>
+</br>
+<li>
+Remove from the pan, allow to stand for one minute and slice.
+</li>
+<li>
+Mix the remaining marinade with the olive oil, salt and pepper and toss through the salad along with the almonds and top with chicken.
+</li>
+<br>
+</br>
+<center>
+<img class="img-circle" class="img-responsive" src='images/nocarbs.jpg'>
+</center>
+<br>
+</br>
+<center>
+<p><b>
+  Best served fresh but can be stored in the fridge for up to 1 day.
+</b></p>
+</center>
+</div>
+  </ol>
+</div>
+</div>
+</div>
+
+
+<br>
+</br>
+
+<div id="site-info" class="a1">
+<center>
+Recipe Room © 2018 | <a href="#" class="a1">ABOUT</a> | <a href="#" class="a1">PRIVACY POLICY</a> | <a href="#" class="a1">CONTACT</a> | <a href="#" class="a1">SUBCRIBE</a>
+</center>
+</div>
+
+</body>
+
+</html>

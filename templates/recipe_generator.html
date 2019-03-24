@@ -1,0 +1,580 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Recipe Room</title>
+      <link rel="stylesheet" type="text/css" href="{{url_for("static", filename= "css/bootstrap.css")}}">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      .column {
+          float: left;
+          width: 33.33%;
+          padding: 5px;
+      }
+
+      /* Clearfix (clear floats) */
+      .row::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+      .homepage-caption {
+          color: #000;
+          text-transform: uppercase;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 0.3em;
+          text-align: center;
+          padding-bottom: 10px;
+      }
+      .homepage-bar {
+          color: #000;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: 0.3em;
+          text-align: center;
+          padding-bottom: 10px;
+      }
+
+      .a1 {
+        color: #2E8B57;
+    }
+
+    .a2 {
+      color: #000;
+    }
+
+      .read-more {
+        color: #000;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        border-bottom: 2px solid #2E8B57;
+        display: inline-block;
+        padding: 0 5px;
+    }
+    .tag-line{
+        font-weight: 700;
+        text-align: center;
+        color: #000;
+        font-size: 28px;
+        margin: 20px 40px 0;
+        letter-spacing: -0.05em;
+    }
+
+    h1 {
+      font-family: arial;
+      font-size: 30px;
+      font-weight: 700;
+      color: green;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 2px solid #2E8B57;
+      display: inline-block;
+      padding: 0 5px;
+    }
+
+/*the code below sets the css style for any text in <p> </p> tag*/
+    p {
+      font-size: 18px;
+      font-weight: 700;
+      color: orange;
+    }
+
+    .gallery-img {
+      padding: 0 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+      border-radius: 50%;
+      position: relative;
+      float: center;
+      width:  350px;
+      height: 350px;
+    }
+
+    ul {
+    display: flex;
+    position: absolute;
+    top: 5.4%;
+    right: 75%;
+    transform: translate(-50%,-50%);
+    }
+    ul li {
+    list-style: none;
+    }
+    ul li a {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    margin: 0 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    z-index: 1;
+    }
+    ul li a .fa {
+    position: relative;
+    color: #262626;
+    transition: .5s;
+    z-index: 3;
+    }
+    ul li a:hover .fa {
+    color: #fff;
+    transform: rotateY(360deg);
+    }
+    ul li a:before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0000CD;
+      transition: .5s;
+      z-index: 2;
+    }
+    ul li a:hover:before {
+      top: 0;
+    }
+    ul li:nth-child(1) a:before {
+      background: #3b5999;
+    }
+    ul li:nth-child(2) a:before {
+      background: #55acee;
+    }
+    ul li:nth-child(3) a:before {
+      background: #e4405f;
+    }
+
+    img:hover {
+      cursor: default;
+      transform: rotateY(360deg);
+      transition: all 2s ease-in-out 0s;
+    }
+
+    .search-bar {
+    display: flex;
+    position: absolute;
+    top: 5.4%;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #000;
+    height: 18px;
+    width: 180px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none !important;
+    font-size: 11px;
+    font-weight: 700;
+    -webkit-appearance: none;
+    position: absolute;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    }
+
+    form.search-icon button {
+      float: right;
+      width: 2.5%;
+      margin-top: -3.8%;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .img-circle {
+      border-radius: 50%;
+      position: relative;
+      float: center;
+      width:  350px;
+      height: 350px;
+    }
+
+    .img-responsive,
+    .thumbnail > img,
+    .thumbnail a > img,
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .logo2 {
+        display: block;
+        margin-left: 550px;
+        margin-right: 550px;
+        width: 200px;
+        height: 150px;
+    }
+
+    .col {
+          display: block;
+          width: 100%;
+          margin-right: -15px;
+          margin-left: -15px;
+      }
+
+      #content-section {
+        display:none;
+        width: 100%;
+        padding: 5px 0;
+        text-align: center;
+        background-color: white;
+        margin-top: 20px;
+      }
+
+      #content-section2 {
+        display:none;
+        width: 100%;
+        padding: 5px 0;
+        text-align: center;
+        background-color: white;
+        margin-top: 20px;
+      }
+
+      #content-section1 {
+        left: 190%;
+        margin-right: -190%;
+      }
+      </style>
+  </head>
+
+  <body>
+    {% block body %}{% endblock %}
+   <nav>
+  	<div>
+    <center class="homepage-bar">
+      <hr>
+    <a href="#" class="a1">ABOUT</a> | <a href="recipe.html" class="a1">RECIPES</a>  | <a href="detox.html" class="a1">DETOX</a>  | <a href="gallery.html" class="a1">GALLERY</a>  | <a href="#" class="a1">CONTACT US</a>
+      <hr>
+      <ul>
+      <li><a href="http://www.facebook.com"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+      <li><a href="http://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      </ul>
+      <form class="search-icon">
+      <input class="search-bar" type="text" placeholder="Search...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </center>
+   </nav>
+   <div>
+       <div class="row">
+      <div class="logo2">
+     <a href="index.html">  <img class="img-responsive" src="https://yamoac.github.io/CodeFirstGirls-WebProject/images/logo1.PNG"></a>
+     </div>
+   </div>
+     </div>
+
+    <center>
+  <p> Stuck in a recipe rut? Your recipe of the day is just a few clicks away...</p>
+  <center>
+  <div id="buzz">
+    <div class="row">
+      <div class="col">
+        <div class="column">
+          <br>
+        </br>
+
+        <script>
+        function toggle_display() {
+          var x = document.getElementById("content-section");
+          if (x.style.display == "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+
+        <script>
+        function toggle_display2() {
+          var x = document.getElementById("content-section2");
+          if (x.style.display == "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+<div id = "content-section1">
+  <h1 class="homepage-caption">Meal Type</h1>
+  <br></br>
+  <button onclick="toggle_display()">Show more</button>
+  <div id="content-section">
+<form class="content_section"method="POST">
+  <input type="radio" name="meal_type" value="Vegan"> Vegan<br>
+  <input type="radio" name="meal_type" value="Veggie"> Veggie<br>
+  <input type="radio" name="meal_type" value="nocarbs"> No Carbs<br>
+  <input type="radio" name="meal_type" value="Pescatarian"> Pescatarian<br>
+  <input type="radio" name="meal_type" value="Meatatarian"> Meatatarian<br>
+  <input type="radio" name="meal_type" value="Cheat Day"> Cheat Day<br>
+  <br>
+</form>
+</div>
+
+<br>
+</br>
+  <h1 class="homepage-caption">Ingredients</h1>
+  <br></br>
+  <button onclick="toggle_display2()">Show more</button>
+  <div id="content-section2">
+  <form method="POST">
+  <div class="ingredients-options">
+    <label><b>Vegtables</b></label>
+    <div class="form-group">
+      <form action="{{ url_for('recipe') }}" method="POST">
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Broccoli">Broccoli
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Carrot">Carrot
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Sweetcorn">Sweetcorn
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Cabbage">Cabbage
+      </label><br></br>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Coriander Leaves">Coriander Leaves
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Chives">Chives
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Onions">Onions
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" name="vegtables" value="Ginger">Ginger
+      </label> <br></br>
+    </form>
+</div>
+
+<br>
+</br>
+
+      <label><b>Fruits</b></label>
+      <div class="form-group">
+        <form method="POST">
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Lemon">Lemon
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Coconut">Coconut
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Pineapple">Pineapple
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Apple">Cabbage
+        </label><br></br>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Blueberries">Bueberries
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Strawberry">Strawberry
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Raisins">Raisins
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="Fruits" value="Prunes">Prunes
+        </label> <br></br>
+      </form>
+
+        <label><b>Meats</b></label>
+        <div class="form-group">
+          <form action="{{ url_for('recipe') }}" method="POST">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Chicken">Chicken
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Beef">Beef
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Pork">Pork
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Turkey">Turkey
+          </label><br></br>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Lamb">Lamb
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Sausage">Sausage
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Bacon">Bacon
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="Meats" value="Ham">Ham
+          </label> <br></br>
+        </form>
+
+          <label><b>Fish / Seafood</b></label>
+          <div class="form-group">
+            <form method="POST">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Salmon">Salmon
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Sea bass">Sea bass
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Tuna">Tuna
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Mackerel">Mackerel
+            </label><br></br>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Sardines">Sardines
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Prawns">Prawns
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Crab">Crab
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="Fish" value="Squid">Squid
+            </label> <br></br>
+          </form>
+
+            <label><b>Grains</b></label>
+            <div class="form-group">
+              <form method="POST">
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Grains" value="Rice">Rice
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Grains" value="Quinoa">Quinoa
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Grains" value="Pasta">Pasta
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Grains" value="Bread">Bread
+              </label><br></br>
+            </form>
+
+              <label><b>Seaonings / Spices</b></label>
+              <div class="form-group">
+                <form method="POST">
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Coriander">Coriander
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Chilli Flakes">Chilli Flakes
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Tumeric">Tumeric
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Jerk Seasoning">Jerk Seasoning
+                </label><br></br>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Italian Herbs">Italian Herbs
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Soya Sauce">Soya Sauce
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Oyster Sauce">Oyster Sauce
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="Seasonings" value="Sweet Chilli">Sweet Chilli
+                </label> <br></br>
+              </form>
+
+
+                <label><b>Dairy / Dairy Alternatives</b></label>
+                <div class="form-group">
+                  <form method="POST">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Milk">Milk
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Butter">Butter
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Egg">Egg
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Yogurt">Yogurt
+                  </label><br></br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Cheese">Cheese
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Coconut Milk">Coconut Milk
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Almond Milk">Almond Milk
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="Dairy" value="Soy Milk">Soy Milk
+                  </label> <br></br>
+                </form>
+
+                  <label><b>Nuts</b></label>
+                  <div class="form-group">
+                    <form method="POST">
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="Nuts" value="Almond Nuts">Almond Nuts
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="Nuts" value="Cashew Nuts">Cashew Nuts
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="Nuts" value="Peanut">Peanut
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="Nuts" value="Pine Nuts">Pine Nuts
+                    </label><br></br>
+                  </form>
+    </div>
+
+  <h1 class="homepage-caption">Cooking Time</h1>
+  <div>
+  <form action="/recipe.html">
+    <input type="radio" name="cooking_time" value="up to 30mins"> 10 - 30mins<br>
+    <input type="radio" name="cooking_time" value="up to 60mins"> 30 - 60mins<br>
+    <input type="radio" name="cooking_time" value="up to 1.5hours"> 1hr - 1.5hours<br>
+    <input type="radio" name="cooking_time" value="more than 1.5hours"> 1.5hours +<br>
+  </form>
+</div>
+
+<br> </br>
+  <h1 class="homepage-caption">Servings</h1>
+  <div>
+  <form>
+  Severing (10max):
+  <input type="number" name="servings" min="1" max="10">
+</form>
+</div>
+
+<br> </br>
+<div>
+  <form action="/recipe.html" methods="POST">
+    <input type="submit">
+  </form>
+</div>
+</div>
+
+</body>
+  </html>

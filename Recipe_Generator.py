@@ -56,11 +56,11 @@ def nocarbs():
     return render_template("nocarbs.html")
 
 
-@app.route("/signup", methods=["POST"])
+@app.route("/signup.html", methods=["POST"])
 def sign_up():
     form_data = request.form
     print form_data["email"]
-    return "Email sent"
+    return render_template("signup.html")
 
 ##def toggle_display():
 ##    el = document.querySelector('.content_section');
@@ -68,6 +68,20 @@ def sign_up():
 ##        el.style.visibility = 'visible'
 ##    else: el.style.visibility = 'hidden'
 
+@app.route("/Form.html")
+def signup():
+    return render_template("Form.html")
+
+import requests
+def send_simple_message():
+    return requests.post(
+    "https://api.mailgun.net/v3/sandboxf1b7a46a2d934c1097903b166b690197.mailgun.org/messages",
+        auth=("api", "6e1de8eb5242fab6b6721631d3fd81a7-7caa9475-44e4fc0c"),
+        data={"from": "Recipe Room <mailgun@sandboxf1b7a46a2d934c1097903b166b690197.mailgun.org>",
+            "to": ["rorleanslindsay@gmail.com"],
+            "subject": "Welcome!!",
+            "text": "Welcome to Recipe Room! Get ready to create some awesome, healthy recipes"})
+send_simple_message()
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5000, debug=True)
